@@ -1,0 +1,382 @@
+img
+{
+    border-radius: 0 !important;
+    max-width: unset !important;
+}
+
+.calc-form {
+    background-color: #F6F8FB;
+    padding-right: 45px;
+}
+
+label span {
+    font-size: 16px;
+    line-height: 130%;
+    color: #353535;
+}
+
+.text-secondary {
+    font-size: 14px;
+    line-height: 18.2px;
+    color: #989898;
+}
+
+.bottom-link {
+    color: #8690A0;
+}
+
+select {
+    font-size: 16px;
+    color: #555555;
+}
+
+button.blue-button {
+    background-color: #D6E36E;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    width: 205px;
+    height: 48px;
+    color: #585F22;
+}
+
+.radio-size {
+    transform: scale(1.5);
+    opacity: 0.9;
+    cursor: pointer;
+    color: #5D5D5D;
+}
+
+input {
+    box-sizing: border-box;
+}
+
+input[type='text'] {
+    width: 205px;
+    height: 44px;
+    border-radius: 5px;
+    border: 1px solid #ECF0F5;
+    color: black;
+    font-size: 16px;
+    padding: 0 15px;
+    font-weight: normal !important;
+    box-shadow: none;
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: #bdbdbd;
+}
+
+#yearsInArmy, #monthInArmy, #daysInArmy, #careYears, #careMonth, #careDays {
+    width: 65px;
+}
+
+#gender, #retireWorkWithoutPension {
+    width: 205px;
+    height: 44px;
+    background-color: #ffffff;
+    border: 1px solid #E1E7EE;
+    border-radius: 5px;
+}
+
+.online-calculator {
+    font-size: 20px;
+    line-height: 110%;
+    color: #353535;
+}
+
+.video-instruction {
+    font-size: 14px;
+    line-height: 110%;
+    color: #293342;
+}
+
+.bg-youtube-link {
+    background-color: #EFF3FA;
+    border-radius: 5px;
+    height: 64px;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.help-link {
+    position: absolute !important;
+    right: -15px;
+    cursor: pointer !important;
+}
+
+.pfr-calculator .calc-footer {
+    float: right;
+}
+
+a {
+    text-decoration: none;
+    color: #555555;
+}
+
+.calc-footer-text {
+    font-size: 14px;
+    color: #353535;
+}
+
+button.footer-button {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+.fb {
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    background-color: #4F729A;
+    position: relative;
+}
+
+.icon-fb {
+    position: absolute !important;
+    left: 10px;
+    top: 6px;
+}
+
+.twitter {
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    background-color: #47AAE7;
+    position: relative;
+}
+
+.icon-twitter {
+    position: absolute !important;
+    left: 7px;
+    top: 7px;
+}
+
+#enterBYWarning, #wrongFee, #enterBYWarning3, #noTarif, #enterGenderWarning, #enterBYWarning2, #alreadyPensioneer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #EA9F9F;
+    justify-content: center;
+    align-items: center;
+    padding: 33px 20px;
+    text-align: center;
+}
+
+#enterBYWarning span.warn-text, #wrongFee span.warn-text, #enterBYWarning3 span.warn-text, #noTarif span.warn-text, #enterGenderWarning span.warn-text, #enterBYWarning2 span.warn-text, #alreadyPensioneer span.warn-text {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+#enterBYWarning span, #wrongFee span, #enterBYWarning3 span, #noTarif span, #enterGenderWarning span, #enterBYWarning2 span, #alreadyPensioneer span {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+#socialPensionWarning, #socialPensionWarning2, #combinationWarning {
+    padding: 33px 30px;
+    text-align: center;
+    background-color: #F2F5F8;
+}
+
+#socialPensionWarning span.info-text, #socialPensionWarning2 span.info-text, #combinationWarning span.info-text {
+    color: #66758C;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#socialPensionWarning p, #socialPensionWarning2 p, #combinationWarning p {
+    color: #66758C;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+#socialPensionWarning p span, #socialPensionWarning2 p span, #combinationWarning p span {
+    font-weight: bold;
+}
+
+.pensionCalcResult {
+    box-sizing: border-box;
+    background-color: #F2F5F8;
+}
+
+.pensionCalcResult h2 {
+    margin-top: 0;
+    padding-top: 33px;
+    padding-bottom: 16px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #353535;
+}
+
+.pensionCalcResult .col-sm-5 {
+    text-align: right;
+}
+
+@media (min-width: 700px)
+{
+    .col-sm-7
+    {
+        min-width: 380px !important;
+    }
+}
+
+.col-sm-12 {
+    padding-right: 80px;
+}
+
+.pensionCalcResult .col-sm-5 {
+    padding-right: 80px;
+}
+
+.arrow
+{
+    position: absolute !important;
+    right: 30px;
+    top: 15px;
+    z-index: 10 !important;
+}
+
+.nice-select .list
+{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto !important;
+}
+
+.nice-select::after
+{
+    display: none !important;
+}
+
+.nice-select .option.selected, .option:hover
+{
+    font-weight: normal !important;
+    background-color: #F5F7FA !important;
+}
+
+.nice-select .option:not(.selected):not(:hover)
+{
+    background-color: #fff !important;
+}
+
+.radio-image
+{
+    position: absolute !important;
+    z-index: 2 !important;
+    top: -2px;
+}
+
+.calc-form .d-flex img.radio-image-point
+{
+    display: none;
+}
+
+.radio-image-point
+{
+    position: absolute !important;
+    z-index: 2 !important;
+    top: 2px;
+    left: 4px;
+}
+
+input[type='radio']
+{
+    opacity: 0;
+}
+
+.pfr-calculator
+{
+    width: 100%;
+}
+
+@media (max-width: 500px)
+{
+    .calc-form .col-sm-5
+    {
+        margin-right: 25px;
+    }
+
+    .calc-form
+    {
+        padding-right: 20px !important;
+    }
+
+    .pfr-calculator .calc-footer > div
+    {
+        margin: 0 !important;
+        min-width: 200px;
+        justify-content: flex-end;
+        display: flex;
+    }
+}
+
+.copyright
+{
+    background: none !important;
+    padding: 0 !important;
+}
+
+.copyright a
+{
+    text-decoration: underline !important;
+}
+
+.with-warning
+{
+    border-color: #E9A4A4 !important;
+}
+
+.calc-footer img
+{
+    border-radius: 0 !important;
+}
+
+a.bg-youtube-link-wrapper, .calc-footer a
+{
+    text-decoration: none !important;
+}
+
+.balloon
+{
+    position: absolute;
+    z-index: 1000;
+    height: auto;
+    background: #fff;
+    box-shadow: 0px 2px 30px #E8EAEE;
+    padding: 12px 18px;
+    font-size: 13px;
+    line-height: 140%;
+    color: #3B3C41;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+
+    border-bottom: 5px solid #fff;
+    position: absolute;
+    right: 15px;
+    top: -5px;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+
+    border-top: 20px solid #fff;
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+}
