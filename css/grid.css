@@ -1,5 +1,5 @@
 @-ms-viewport {
-    width: device-width;
+    /*width: device-width;*/
 }
 
 html {
@@ -1310,7 +1310,7 @@ html {
 }
 
 .d-inline-flex {
-    display: -webkit-inline-box !important;
+    /*display: -webkit-inline-box !important;*/
     display: -ms-inline-flexbox !important;
     display: inline-flex !important
 }
@@ -1351,7 +1351,7 @@ html {
     }
 
     .d-sm-inline-flex {
-        display: -webkit-inline-box !important;
+        /*display: -webkit-inline-box !important;*/
         display: -ms-inline-flexbox !important;
         display: inline-flex !important
     }
@@ -1393,7 +1393,7 @@ html {
     }
 
     .d-md-inline-flex {
-        display: -webkit-inline-box !important;
+        /*display: -webkit-inline-box !important;*/
         display: -ms-inline-flexbox !important;
         display: inline-flex !important
     }
@@ -1435,7 +1435,7 @@ html {
     }
 
     .d-lg-inline-flex {
-        display: -webkit-inline-box !important;
+        /*display: -webkit-inline-box !important;*/
         display: -ms-inline-flexbox !important;
         display: inline-flex !important
     }
@@ -1477,7 +1477,7 @@ html {
     }
 
     .d-xl-inline-flex {
-        display: -webkit-inline-box !important;
+        /*display: -webkit-inline-box !important;*/
         display: -ms-inline-flexbox !important;
         display: inline-flex !important
     }
@@ -1519,7 +1519,7 @@ html {
     }
 
     .d-print-inline-flex {
-        display: -webkit-inline-box !important;
+        /*display: -webkit-inline-box !important;*/
         display: -ms-inline-flexbox !important;
         display: inline-flex !important
     }
@@ -1659,7 +1659,7 @@ html {
 
 .align-self-auto {
     -ms-flex-item-align: auto !important;
-    -ms-grid-row-align: auto !important;
+    /*-ms-grid-row-align: auto !important;*/
     align-self: auto !important
 }
 
@@ -1825,7 +1825,7 @@ html {
 
     .align-self-sm-auto {
         -ms-flex-item-align: auto !important;
-        -ms-grid-row-align: auto !important;
+        /*-ms-grid-row-align: auto !important;*/
         align-self: auto !important
     }
 
@@ -1992,7 +1992,7 @@ html {
 
     .align-self-md-auto {
         -ms-flex-item-align: auto !important;
-        -ms-grid-row-align: auto !important;
+        /*-ms-grid-row-align: auto !important;*/
         align-self: auto !important
     }
 
@@ -2159,7 +2159,7 @@ html {
 
     .align-self-lg-auto {
         -ms-flex-item-align: auto !important;
-        -ms-grid-row-align: auto !important;
+        /*-ms-grid-row-align: auto !important;*/
         align-self: auto !important
     }
 
@@ -2326,7 +2326,7 @@ html {
 
     .align-self-xl-auto {
         -ms-flex-item-align: auto !important;
-        -ms-grid-row-align: auto !important;
+        /*-ms-grid-row-align: auto !important;*/
         align-self: auto !important
     }
 

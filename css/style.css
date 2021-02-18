@@ -6,13 +6,25 @@ img
 
 .calc-form {
     background-color: #F6F8FB;
-    padding-right: 45px;
+    padding-right: 80px;
 }
 
 label span {
     font-size: 16px;
     line-height: 130%;
     color: #353535;
+    padding-bottom: 10px;
+}
+
+.col-md-12 {
+    margin-bottom: 15px;
+}
+
+.col-md-12 a {
+    text-decoration-line: underline;
+    color: #4D82CF;
+    font-size: 14px;
+    line-height: 130%;
 }
 
 .text-secondary {
@@ -72,7 +84,7 @@ input::placeholder {
     width: 65px;
 }
 
-#gender, #retireWorkWithoutPension {
+#spis1, #spis2, #spis3, #spis4, #spis5, #spis6, #spis7, #war, #izd, #inv, #uinv {
     width: 205px;
     height: 44px;
     background-color: #ffffff;
@@ -203,6 +215,11 @@ button.footer-button {
 .pensionCalcResult {
     box-sizing: border-box;
     background-color: #F2F5F8;
+    display: none;
+}
+
+.pensionCalcResult.open {
+    display: block;
 }
 
 .pensionCalcResult h2 {
