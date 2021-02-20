@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="d-flex justify-content-center" style="width: 730px">
+<div class="d-flex justify-content-center">
     <div class="w-100">
         <div class="calc-form pt-4 pb-5 pl-4">
             <div class="row">
@@ -91,11 +91,11 @@
                             <option value="47728">49 тарифный разряд (заместитель МО РФ)</option>
                             <option value="48813">50 тарифный разряд (первый заместитель МО РФ)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="gender">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis1">
                     </div>
                     <div class="col-md-12 mb-3 ml-1" id="spis1_group_hand" style="display: none">
                         <label for="spis1_hand">Оклад по воинской должности (ввод вручную)</label><br>
-                        <input class="w-100 mt-3" id="spis1_hand" name="spis1_hand" onkeyup="main()" placeholder="Укажите размер оклада" type="text" value="0">
+                        <input class="w-100 mt-3" id="spis1_hand" name="spis1_hand" onkeyup="main()" placeholder="Укажите размер оклада" type="text" value="">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis2"><span>Оклад по воинскому званию</span></label>
@@ -105,8 +105,8 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis2" name="spis2" onchange="main()" size="1" required>
-                            <option value="0">Укажите воинское звание</option>
+                        <select class="w-100 px-3" id="spis2" name="spis2" onchange="main()" size="1" required tabindex="-1">
+                            <option value="">Укажите воинское звание</option>
                             <option value="hand">Указать размер оклада вручную</option>
                             <option value="5424">Рядовой, матрос</option>
                             <option value="5966">Ефрейтор, старший матрос</option>
@@ -129,11 +129,11 @@
                             <option value="29288">Генерал армии, адмирал флота</option>
                             <option value="32542">Маршал Российской Федерации</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id=" ">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis2">
                     </div>
                     <div class="col-md-12 mb-3 ml-1" id="spis2_group_hand" style="display: none">
                         <label for="spis2_hand">Оклад по воинскому званию (ввод вручную)</label>
-                        <input class="w-100 mt-3" id="spis2_hand" name="spis2_hand" onkeyup="main()" placeholder="Укажите размер оклада" type="text" value="0">
+                        <input class="w-100 mt-3" id="spis2_hand" name="spis2_hand" onkeyup="main()" placeholder="Укажите размер оклада" type="text" value="">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis3"><span>Надбавка за квалификационную категорию летному составу</span></label>
@@ -141,6 +141,7 @@
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="spis3" name="spis3" onchange="main()" size="1" required>
+                            <option value="">Укажите квалификационную категорию</option>
                             <option value="1">Отсутствие квалификационной категории</option>
                             <option value="1.15">Летчик (штурман) второго класса, летчик (штурман) - инструктор второго класса</option>
                             <option value="1.2">Летчик (штурман) первого класса, летчик (штурман) - инструктор первого класса</option>
@@ -149,33 +150,33 @@
                             <option value="1.15">Бортовой специалист первого класса</option>
                             <option value="1.2">Бортовой специалист-мастер</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id=" ">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis3">
                     </div>
                     <div class="col-md-12 ml-1">
-                        <label for="spis7"><span>Надбавка за выслугу лет</span></label>
+                        <label for="spis4"><span>Надбавка за выслугу лет</span></label>
                     </div>
                     <div class="col-md-12 mb-3 ml-1">
                         <a href="http://voensud-mo.ru/doc/mil/order%20/2011/2700#40" target="_blank">(п.40)**</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis7" name="spis7" onchange="main()" size="1" required>
-                            <option value="0">Укажите выслугу для исчисления надбавки за выслугу лет</option>
+                        <select class="w-100 px-3" id="spis4" name="spis4" onchange="main()" size="1" required>
+                            <option value="">Укажите выслугу для исчисления надбавки за выслугу лет</option>
                             <option value="0.15">от 5 до 10 лет - 15 %</option>
                             <option value="0.20">от 10 до 15 лет - 20 %</option>
                             <option value="0.25">от 15 до 20 лет - 25 %</option>
                             <option value="0.30">от 20 до 25 лет - 30 %</option>
                             <option value="0.40">от 25 лет и более - 40 %</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id=" ">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis4">
                     </div>
                     <div class="col-md-12 ml-1">
-                        <label for="spis4"><span>Общая продолжительность службы, учитываемая для назначении пенсии</span></label>
+                        <label for="spis5"><span>Общая продолжительность службы, учитываемая для назначении пенсии</span></label>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis4" name="spis4" onchange="main()" size="1" required>
-                            <option value="0">Укажите выслугу лет на пенсию</option>
+                        <select class="w-100 px-3" id="spis5" name="spis5" onchange="main()" size="1" required>
+                            <option value="">Укажите выслугу лет на пенсию</option>
                             <option value="0.50">20 лет - 50 %</option>
                             <option value="0.53">21 год - 53 %</option>
                             <option value="0.56">22 лет - 56 %</option>
@@ -190,14 +191,14 @@
                             <option value="0.83">31 год - 83 %</option>
                             <option value="0.85">32 года или более - 85 %</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id=" ">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis5">
                     </div>
                     <div class="col-md-12 ml-1">
-                        <label for="spis5"><span>Районный коэффициент</span></label>
+                        <label for="spis6"><span>Районный коэффициент</span></label>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis5" name="spis5" onchange="main()" size="1">
+                        <select class="w-100 px-3" id="spis6" name="spis6" onchange="main()" size="1">
                             <option value="1.0">Нет</option>
                             <option value="1.15">1.15</option>
                             <option value="1.2">1.2</option>
@@ -210,7 +211,7 @@
                             <option value="1.8">1.8</option>
                             <option value="2.0">2.0</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id=" ">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis6">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="war"><span>Повышение пенсии (надбавка) ветерану боевых действий*</span></label>
@@ -225,7 +226,7 @@
                             <option value="1690.83">Да (с 01.04.2019 г. - 1690,83 руб.)</option>
                             <option value="1793.97">Да (с 01.04.2020 г. - 1793,97 руб.)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id=" ">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="war">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="izd"><span>Надбавка неработающим пенсионерам, имеющим нетрудоспособных иждивенцев*</span></label>
@@ -238,7 +239,7 @@
                             <option value="3381.66">2 иждивенца (с 01.04.2019 г. - 64 % расчетного размера пенсии (3381,66 руб.)</option>
                             <option value="5283.84">3 и более иждивенцев (100 % расчетного размера пенсии (5283,84 руб.)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id=" ">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="izd">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="inv"><span>Надбавка пенсионерам, являющимся инвалидами I группы либо достигшим 80-летнего возраста*</span></label>
@@ -249,7 +250,7 @@
                             <option value="0">Нет</option>
                             <option value="5283.84">Инвалид I гр. либо возраст 80-лет (с 01.04.2019 г. - 100 % расчетного размера пенсии (5283.84 руб.)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id=" ">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="inv">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="uinv"><span>Увеличение пенсии за выслугу лет инвалидам I-III группы*</span></label>
@@ -265,17 +266,17 @@
                             <option value="10567.68">Инвалиды II гр., участники ВОВ, ставшие инвалидами вследствие общего заболевания, трудового увечья и других причин (за исключением лиц, инвалидность которых наступила вследствие их противоправных действий) (200% РРП - 10567,68 руб.) (с 01.04.2019 г. - расчетный размер пенсии (РРП) - 5283.84 руб.)</option>
                             <option value="7925.76">Инвалиды III гр., участники ВОВ, ставшие инвалидами вследствие общего заболевания, трудового увечья и других причин (за исключением лиц, инвалидность которых наступила вследствие их противоправных действий) (150% РРП - 7924,76 руб.) (с 01.04.2019 г. - расчетный размер пенсии (РРП) - 5283.84 руб.)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="gender">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="uinv">
                     </div>
                     <div class="col-md-12 ml-1">
-                        <label for="spis6"><span>Укажите дату, на которую необходимо рассчитать военную пенсию</span></label>
+                        <label for="spis7"><span>Укажите дату, на которую необходимо рассчитать военную пенсию</span></label>
                     </div>
                     <div class="col-md-12 mb-3 ml-1">
                         <a href="http://voensud-mo.ru/pension#Р" target="_blank">(см. понижающий коэффициент)</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis6" name="spis6" onchange="main()" size="1">
+                        <select class="w-100 px-3" id="spis7" name="spis7" onchange="main()" size="1">
                             <option selected="selected" value="1.0">Без коэффициента</option>
                             <option value="0.5805">с 01.10.2013 г. (58,05%)</option>
                             <option value="0.6005">с 01.01.2014 г. (60,05%)</option>
@@ -301,7 +302,7 @@
                             <option value="0.98">2034 год (98%)</option>
                             <option value="1.0">2035 год (100%)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="gender">
+                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis7">
                     </div>
                 </div>
                 <div class="row mt-5">
@@ -373,6 +374,10 @@
 
 <script>
 
+    /*let span = document.querySelector('#sasa');
+    let value, spis1, spis2, spis3, spis4, spis5, spis6, spis7, war, izd, inv, uinv;*/
+
+
     $('select').niceSelect();
 
     $('.help-link').each(function () {
@@ -393,45 +398,47 @@
         });
     });
 
-    function modRound(value, precision) {
+    /*function modRound(value, precision) {
         // спецчисло для округления
         var precision_number = Math.pow(10, precision);
 
         // округляем
         return Math.round(value * precision_number) / precision_number;
-    };
+    };*/
 
-    function main() {
+    /*function main() {
 
-        var spis1 = document.vvodznac.spis1.value;
+        spis1 = document.vvodznac.spis1.value;
         if (spis1 === 'hand') {
             document.getElementById('spis1_group_hand').style.display = 'block';
+            document.getElementById('spis1_hand').setAttribute('required', '')
             spis1 = document.vvodznac.spis1_hand.value;
         } else {
             document.getElementById('spis1_group_hand').style.display = 'none';
         }
 
-        var spis2 = document.vvodznac.spis2.value;
+        spis2 = document.vvodznac.spis2.value;
         if (spis2 === 'hand') {
             document.getElementById('spis2_group_hand').style.display = 'block';
+            document.getElementById('spis2_hand').setAttribute('required', '')
             spis2 = document.vvodznac.spis2_hand.value;
         } else {
             document.getElementById('spis2_group_hand').style.display = 'none';
         }
 
-        var spis3 = document.vvodznac.spis3.value;
-        var spis4 = document.vvodznac.spis4.value;
-        var spis5 = document.vvodznac.spis5.value;
-        var spis6 = document.vvodznac.spis6.value;
-        var spis7 = document.vvodznac.spis7.value;
-        var war = document.vvodznac.war.value;
-        var izd = document.vvodznac.izd.value;
-        var inv = document.vvodznac.inv.value;
-        var uinv = document.vvodznac.uinv.value;
+        spis3 = document.vvodznac.spis3.value;
+        spis4 = document.vvodznac.spis4.value;
+        spis5 = document.vvodznac.spis5.value;
+        spis6 = document.vvodznac.spis6.value;
+        spis7 = document.vvodznac.spis7.value;
+        war = document.vvodznac.war.value;
+        izd = document.vvodznac.izd.value;
+        inv = document.vvodznac.inv.value;
+        uinv = document.vvodznac.uinv.value;
 
         var kf = 0.3;
 
-        if (spis4 > 0.64) {
+        if (spis5 > 0.64) {
             kf = 0.4;
         }
 
@@ -447,25 +454,25 @@
         inv = parseFloat(inv);
         uinv = parseFloat(uinv);
 
-        let span = document.querySelector('#sasa');
-        let value = modRound((((spis1 * spis3 + spis2) + (spis1 * spis3 + spis2) * spis7) * spis5) * spis4 * spis6 + war + izd * spis5 + inv * spis5 + uinv * spis5, 2);
-        span.innerHTML = `${value}`;
-    }
+        value = modRound((((spis1 * spis3 + spis2) + (spis1 * spis3 + spis2) * spis4) * spis6) * spis5 * spis7 + war + izd * spis6 + inv * spis6 + uinv * spis6, 2);
+    }*/
 
     let form = document.querySelector('form');
     form.addEventListener("submit", function (event) {
         event.preventDefault();
     });
 
-    let buttonFind = document.querySelector('.blue-button');
+    /*let buttonFind = document.querySelector('.blue-button');
     let resultDiv = document.querySelector('.result-block');
     buttonFind.onclick = function() {
-        if(spis1.value === "") {
+        console.log(spis1, spis2, spis3, spis4, spis5);
+        if(spis1 === undefined || isNaN(spis1) || spis2 === undefined || isNaN(spis2) || spis3 === undefined || isNaN(spis3) || spis4 === undefined || isNaN(spis4) || spis5 === undefined || isNaN(spis5)) {
             return;
         } else {
             resultDiv.classList.add('open');
+            span.innerHTML = `${value}`;
         }
-    }
+    }*/
 
 </script>
 

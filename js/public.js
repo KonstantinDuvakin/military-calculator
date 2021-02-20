@@ -1,9 +1,4 @@
-import $ from "jquery";
-import {calcParams} from "./params";
-
-export default function initWidget ()
-{
-	console.log('init calc widget');
+console.log('init calc widget');
 	var lang = $("input#calc-lang");
 	if(lang.length) {
 		lang = lang.val();
@@ -15,32 +10,6 @@ export default function initWidget ()
 	var pensionForm = $(".calc-form");
 	var persionFormInputs = pensionForm.find("input,select");
 	var calcResult = $(".pensionCalcResult");
-	var calcResultToday = $(".pensionCalcResultToday");
-	var socialPensionWarning = $("#socialPensionWarning");
-	var socialPensionWarning2 = $("#socialPensionWarning2");
-	var combinationWarning = $("#combinationWarning");
-	var enterParamsWarning = $("#enterParamsWarning");
-	var enterGenderWarning = $("#enterGenderWarning");
-	var enterBYWarning = $("#enterBYWarning");
-	var enterBYWarning2 = $("#enterBYWarning2");
-	var enterBYWarning3 = $("#enterBYWarning3");
-	var alreadyPensioneer = $("#alreadyPensioneer");
-	var wrongFee = $("#wrongFee");
-	var noTarif = $("#noTarif");
-	var ending = $(".ending");
-	var newCoefSummSmall = $(".newCoefSummSmall");
-	var personOSsmall = $(".personOSsmall");
-
-	var armySection = pensionForm.find('.army-section');
-	armySection.hide();
-	persionFormInputs.filter('[type="radio"][name="noArmy"]').click(function () {
-		if($(this).val() == 2) {
-			armySection.slideDown(150);
-		}
-		else {
-			armySection.slideUp(150);
-		}
-	});
 
 	var textInputs = persionFormInputs.filter("input[type='text']");
 	var prevValues = [];
@@ -55,535 +24,80 @@ export default function initWidget ()
 		if($(this).val() == '') $(this).val(prevValues[$(this).attr('id')]);
 	});
 
-	$(".performCalc").click(function (e) {
-		$('.result-top, .result-bottom').hide();
-		e.preventDefault();
-		recalculateForm('.result-bottom');
-	});
+	let span = document.querySelector('#sasa');
+	let value, spis1, spis2, spis3, spis4, spis5, spis6, spis7, war, izd, inv, uinv;
 
-	var careerPlanQuestions = $("div.careerPlanQuestions");
-	var careerPlanSwitch = $("input[name='careerPlan']");
+	function modRound(value, precision) {
+		// спецчисло для округления
+		var precision_number = Math.pow(10, precision);
 
-	function revealCPQuestionsBlocks(switchValue) {
-		careerPlanQuestions.hide();
-		switch(switchValue) {
-			case '1':
-				//наемный работник
-				careerPlanQuestions.filter(".careerPlan1").show();
-				break;
-			case '2':
-				//самозанятый
-				careerPlanQuestions.filter(".careerPlan2").show();
-				break;
-			case '3':
-				//совмещающий
-				careerPlanQuestions.show();
-				break;
+		// округляем
+		return Math.round(value * precision_number) / precision_number;
+	};
+
+	function main() {
+
+		spis1 = document.vvodznac.spis1.value;
+		if (spis1 === 'hand') {
+			document.getElementById('spis1_group_hand').style.display = 'block';
+			document.getElementById('spis1_hand').setAttribute('required', '')
+			spis1 = document.vvodznac.spis1_hand.value;
+		} else {
+			document.getElementById('spis1_group_hand').style.display = 'none';
 		}
+
+		spis2 = document.vvodznac.spis2.value;
+		if (spis2 === 'hand') {
+			document.getElementById('spis2_group_hand').style.display = 'block';
+			document.getElementById('spis2_hand').setAttribute('required', '')
+			spis2 = document.vvodznac.spis2_hand.value;
+		} else {
+			document.getElementById('spis2_group_hand').style.display = 'none';
+		}
+
+		spis3 = document.vvodznac.spis3.value;
+		spis4 = document.vvodznac.spis4.value;
+		spis5 = document.vvodznac.spis5.value;
+		spis6 = document.vvodznac.spis6.value;
+		spis7 = document.vvodznac.spis7.value;
+		war = document.vvodznac.war.value;
+		izd = document.vvodznac.izd.value;
+		inv = document.vvodznac.inv.value;
+		uinv = document.vvodznac.uinv.value;
+
+		var kf = 0.3;
+
+		if (spis5 > 0.64) {
+			kf = 0.4;
+		}
+
+		spis1 = parseInt(spis1);
+		spis2 = parseInt(spis2);
+		spis3 = parseFloat(spis3);
+		spis4 = parseFloat(spis4);
+		spis5 = parseFloat(spis5);
+		spis6 = parseFloat(spis6);
+		spis7 = parseFloat(spis7);
+		war = parseFloat(war);
+		izd = parseFloat(izd);
+		inv = parseFloat(inv);
+		uinv = parseFloat(uinv);
+
+		value = modRound((((spis1 * spis3 + spis2) + (spis1 * spis3 + spis2) * spis4) * spis6) * spis5 * spis7 + war + izd * spis6 + inv * spis6 + uinv * spis6, 2);
 	}
 
-	revealCPQuestionsBlocks(careerPlanSwitch.filter(':checked').val());
-	careerPlanSwitch.change(function () {
-		revealCPQuestionsBlocks($(this).val());
+	$(".performCalc").click(function () {
+		//$('.result-bottom').hide();
+		calcResult.hide();
+		if (spis1 === undefined || isNaN(spis1) || spis2 === undefined || isNaN(spis2) || spis3 === undefined || isNaN(spis3) || spis4 === undefined || isNaN(spis4) || spis5 === undefined || isNaN(spis5)) {
+			return;
+		} else {
+			span.innerHTML = `${value}`;
+			calcResult.slideUp();
+			calcResult.fadeIn();
+		}
 	});
 
-	$(".performCalcToday").click(function (e) {
-		$('.result-top, .result-bottom').hide();
-		e.preventDefault();
-		recalculateForm('.result-top');
-		enterParamsWarning.hide();
-		enterGenderWarning.hide();
-		enterBYWarning.hide();
-		enterBYWarning2.hide();
-		enterBYWarning3.hide();
-		socialPensionWarning.hide();
-		socialPensionWarning2.hide();
-		combinationWarning.hide();
-		alreadyPensioneer.hide();
-		wrongFee.hide();
-		noTarif.hide();
-		calcResultToday.show();
-		calcResult.hide();
-	});
 
-	enterGenderWarning.hide();
-	enterBYWarning.hide();
-	enterBYWarning2.hide();
-	enterBYWarning3.hide();
-	socialPensionWarning.hide();
-	socialPensionWarning2.hide();
-	combinationWarning.hide();
-	calcResult.hide();
-	calcResultToday.hide();
-	alreadyPensioneer.hide();
-	wrongFee.hide();
-	noTarif.hide();
 
-	function recalculateForm(output_area) {
-		enterParamsWarning.hide();
-		enterGenderWarning.hide();
-		enterBYWarning.hide();
-		enterBYWarning2.hide();
-		enterBYWarning3.hide();
-		socialPensionWarning.hide();
-		socialPensionWarning2.hide();
-		combinationWarning.hide();
-		alreadyPensioneer.hide();
-		wrongFee.hide();
-		noTarif.hide();
-		calcResult.hide();
-		calcResultToday.hide();
-
-		var genderInput = persionFormInputs.filter('[name="gender"]'); //выбор пола
-
-		if(genderInput.length < 1) {
-			enterGenderWarning.show();
-			$(output_area).slideDown();
-			return;
-		}
-
-		var birthDateVal = persionFormInputs.filter('#birthDate').val(); //заполнен год рождения
-		if(!birthDateVal.match(/\d{4}/)) {
-			enterBYWarning.show();
-			persionFormInputs.filter('#birthDate').addClass('with-warning');
-			$(output_area).slideDown();
-			return;
-		}
-
-		var personTariff = parseInt(persionFormInputs.filter('[name="pensionTarif"]').val());
-
-		/*
-		var personTariff = persionFormInputs.filter('[name="pensionTarif"]:checked');
-		if(personTariff.length < 1) {
-			noTarif.show();
-			$(output_area).slideDown();
-			return;
-		}
-		personTariff = parseInt(personTariff.val());
-		*/
-
-		// Общий расчет
-
-		// Служба в армии
-		var VSyears = parseInt(persionFormInputs.filter('[name="yearsInArmy"]').val() || 0);
-		var VSmonth = parseInt(persionFormInputs.filter('[name="monthInArmy"]').val() || 0);
-		var VSdays = parseInt(persionFormInputs.filter('[name="daysInArmy"]').val() || 0);
-		// Стаж
-		var VS = ((((VSyears * 12) + VSmonth) / 12 * 365) + VSdays) / 365;
-		// Коэффициент
-		var VSK = VS * calcParams.VSkoef;
-
-		// Уход за нетрудоспособными
-		var CRyears = parseInt(persionFormInputs.filter('[name="careYears"]').val() || 0);
-		var CRmonth = parseInt(persionFormInputs.filter('[name="careMonth"]').val() || 0);
-		var CRdays = parseInt(persionFormInputs.filter('[name="careDays"]').val() || 0);
-		// Стаж
-		var CR = ((((CRyears * 12) + CRmonth) / 12 * 365) + CRdays) / 365;
-		// Коэффициент
-		var CRK = CR * calcParams.CRkoef;
-
-		// Дети, не более 4х
-		var D = parseInt(persionFormInputs.filter('#childrenCount1').val() || 0);
-		if(D < 0) {
-			D = 0;
-		}
-		else {
-			if(D > 4) D = 4;
-		}
-
-		// Стаж
-		var DO = parseFloat(persionFormInputs.filter('#childrenVac1').val() || 0);
-		if(DO < 0) {
-			DO = 0;
-		}
-		else {
-			if(DO > 1.5) DO = 1.5;
-		}
-
-		// Коэффициент
-		var KD = 0;
-
-		if(D > 0) {
-			KD = DO * (D > 0 ? 1.8 + (D > 1 ? 3.6 + (D > 2 ? 5.4 + (D > 3 ? (5.4) : 0) : 0) : 0) : 0);
-			DO = DO * D;
-		}
-
-		// Коэффициент за нетрудовые периоды
-		var NK = KD + CRK + VSK;
-
-		// Стаж за нетрудовые периоды
-		var NS = DO + VS + CR;
-
-		var retireWork = persionFormInputs.filter('#retireWorkWithoutPension').val();
-		if(retireWork > 10) retireWork = 10;
-
-		// Расчеты в зависимости от типа занятости
-		var careerPlan = persionFormInputs.filter('[name="careerPlan"]:checked').val();
-
-		// Наемный работник
-		function calcEmpl() {
-			// Зарплата
-			var ZP = parseInt(persionFormInputs.filter('#fee').val() || 0);
-			if(ZP.length < 1) {
-				ZP = 0;
-				persionFormInputs.filter('#fee').val(ZP);
-			}
-			ZP = parseInt(persionFormInputs.filter('#fee').val() || 0);
-			if(ZP < 0) ZP = 0;
-			if(ZP > calcParams.ZPM) ZP = calcParams.ZPM;
-
-			// Стаж
-			var S = parseInt(persionFormInputs.filter('#careerLength').val() || 0);
-			if(S.length < 1) {
-				S = 0;
-			}
-			if(S < 0) S = 0;
-			if(S > 60) {
-				enterBYWarning3.show();
-				persionFormInputs.filter('#careerLength').addClass('with-warning');
-				$(output_area).slideDown();
-				return false;
-			}
-
-			if(S > 0 && ZP < calcParams.MROT) { //зарплата меньше мрот
-				wrongFee.show();
-				persionFormInputs.filter('#fee').addClass('with-warning');
-				$(output_area).slideDown();
-				return false;
-			}
-
-			// Пенсионные коэффициенты за трудовой период
-			var IPKtrud = (ZP / calcParams.ZPM) * calcParams.KNPG[personTariff] * (S * 10);
-
-			return {S: S, IPKtrud: IPKtrud};
-		}
-
-		function calcSZ() {
-			// Стаж
-			var S = parseInt(persionFormInputs.filter('#SZPeriod').val() || 0);
-			if(S.length < 1) {
-				S = 0;
-			}
-			if(S < 0) S = 0;
-
-			// Годовой доход
-			var GD = parseInt(persionFormInputs.filter('#revenue').val() || 0);
-			if(GD.length < 1) {
-				GD = 0;
-			}
-			if(GD < 0) GD = 0;
-
-			// Сумма страховых взносов на страховую пенсию, начисленных исходя из размера годового дохода
-			var SVGD = 0;
-			var SVGDkoeff = 0;
-			if(personTariff == 0) {
-				SVGDkoeff = 16;
-			}
-			else {
-				SVGDkoeff = 10;
-			}
-
-			if(GD < calcParams.GDmax) {
-				SVGD = (SVGDkoeff * (calcParams.FIKSIP * 0.26 * 12)) / 26;
-			}
-			else {
-				SVGD = (SVGDkoeff * (calcParams.FIKSIP * 0.26 * 12) + ((GD - calcParams.GDmax) * 0.01)) / 26;
-			}
-
-			// Пенсионные коэффициенты за трудовой период
-			var IPKtrud = (SVGD / calcParams.MSSV) * S * 10;
-
-			return {S: S, IPKtrud: IPKtrud};
-		}
-
-		var calcPart = null;
-		var calcPartEmpl = null;
-		var calcPartSZ = null;
-		var IPKtrud = null;
-		var S = null;
-		//var selhoz = 0;
-		switch(careerPlan) {
-			case '1':
-				//наемный работник
-				calcPart = calcEmpl();
-				if(calcPart === false) return false;
-
-				//selhoz = persionFormInputs.filter('#careerSelHoz').val();
-
-				// Стаж
-				S = calcPart.S;
-
-				// Пенсионные коэффициенты
-				IPKtrud = calcPart.IPKtrud;
-
-				break;
-			case '2':
-				//самозанятый
-				calcPart = calcSZ();
-
-				// Стаж
-				S = calcPart.S;
-
-				// Пенсионные коэффициенты
-				IPKtrud = calcPart.IPKtrud;
-
-				break;
-			case '3':
-				//совмещающий
-				calcPartEmpl = calcEmpl();
-				if(calcPartEmpl === false) return false;
-
-				calcPartSZ = calcSZ();
-
-				//selhoz = persionFormInputs.filter('#careerSelHoz').val();
-
-				// Количество пенсионных коэффициентов свыше максимально установленного значения в год, полученных при совмещённой деятельности
-				var So = persionFormInputs.filter('#combinePeriod').val();
-				if(So.length < 1) {
-					So = 0;
-					persionFormInputs.filter('#combinePeriod').val(So);
-				}
-				if(So > Math.min(calcPartEmpl.S, calcPartSZ.S)) {
-					combinationWarning.show();
-					$(output_area).slideDown();
-					return false;
-				}
-
-				// Годовой пенсионный коэффициент, получаемый гражданином в года совмещения деятельности
-				var IPKemp = calcPartEmpl.IPKtrud * So / calcPartEmpl.S;
-				var IPKsz = calcPartSZ.IPKtrud * So / calcPartSZ.S;
-				var IPKo = (IPKsz + IPKemp) / So;
-				if(IPKo > 10) IPKo = 10;
-				var IPKis = IPKo * So;
-
-				// Стаж
-				S = calcPartEmpl.S + calcPartSZ.S - So;
-
-				// Пенсионные коэффициенты
-				IPKtrud = (calcPartSZ.IPKtrud - IPKsz) + (calcPartEmpl.IPKtrud - IPKemp) + IPKis;
-				if(So == 0) {
-					IPKtrud = calcPartSZ.IPKtrud + calcPartEmpl.IPKtrud;
-				}
-
-				break;
-		}
-
-		// Переходный период для наемных и самозанятых
-		if(careerPlan == '1' || careerPlan == '2') {
-			var IPKtrud2021 = 0;
-			var ZP = persionFormInputs.filter('#fee').val();
-			var IPKtrud2015 = 0;
-			var GD = parseInt(persionFormInputs.filter('#revenue').val() || 0);
-			if(GD.length < 1) {
-				GD = 0;
-			}
-			if(GD < 0) GD = 0;
-
-			// Сумма страховых взносов на страховую пенсию, начисленных исходя из размера годового дохода
-			var SVGD = 0;
-			var SVGDkoeff = 0;
-			if(personTariff == 0) {
-				SVGDkoeff = 16;
-			}
-			else {
-				SVGDkoeff = 10;
-			}
-
-			if(GD < calcParams.GDmax) {
-				SVGD = (SVGDkoeff * (calcParams.FIKSIP * 0.26 * 12)) / 26;
-			}
-			else {
-				SVGD = (SVGDkoeff * (calcParams.FIKSIP * 0.26 * 12) + ((GD - calcParams.GDmax) * 0.01)) / 26;
-			}
-
-			if(S > 3) {
-				IPKtrud2021 = IPKtrud * ((S - 3) / S);
-				if(careerPlan == '1') {
-					IPKtrud2015 = ZP / calcParams.ZPM * 10;
-				}
-				else {
-					if(careerPlan == '2') {
-						IPKtrud2015 = (SVGD / calcParams.MSSV) * 10;
-					}
-				}
-			}
-			if(S < 4) {
-				IPKtrud2021 = 0;
-				if(careerPlan == '1') {
-					IPKtrud2015 = ZP / calcParams.ZPM * 10;
-				}
-				else {
-					if(careerPlan == '2') {
-						IPKtrud2015 = (SVGD / calcParams.MSSV) * 10;
-					}
-				}
-			}
-
-			if(personTariff == '0') { //KNPG = 1
-				IPKtrud2015 = (S > 0 ? Math.min(8.70, IPKtrud2015) : 0) + (S > 1 ? Math.min(9.13, IPKtrud2015) : 0) +
-					(S > 2 ? Math.min(9.57, IPKtrud2015) : 0);
-			}
-			else { //KNPG = 0.625
-				IPKtrud2015 = (S > 0 ? Math.min(8.70, IPKtrud2015) : 0) + (S > 1 ? Math.min(9.13, IPKtrud2015) : 0) +
-					(S > 2 ? Math.min(9.57, IPKtrud2015) : 0);
-			}
-
-
-			IPKtrud = IPKtrud2015 + IPKtrud2021;
-
-		}
-
-		if(careerPlan == '1') {
-			persionFormInputs.filter('#SZPeriod').val(0);
-			persionFormInputs.filter('#revenue').val(0);
-		}
-		else {
-			if(careerPlan == '2') {
-				persionFormInputs.filter('#careerLength').val(0);
-				persionFormInputs.filter('#fee').val(0);
-			}
-		}
-
-		// Пенсионные коэффициенты
-		var IPK = (IPKtrud + NK) * calcParams.SPKop[retireWork];
-
-		// Общий стаж
-		var OS = S + NS;
-
-		newCoefSummSmall.html((Math.round(IPK * 100) / 100).toString());
-		personOSsmall.html((Math.round(OS * 100) / 100).toString());
-
-		if(lang == 'ru') {
-			newCoefSummSmall.html(newCoefSummSmall.html().replace(/\./, ","));
-			personOSsmall.html(personOSsmall.html().replace(/\./, ","));
-		}
-
-		var WR = OS.toString().substr(-1);
-
-		ending.html('лет');
-
-		if(WR == 1) {
-			ending.html('год');
-		}
-		else {
-			if(WR >= 2 && WR <= 4) {
-				ending.html('года');
-			}
-		}
-
-		//пересчёт права выхода на пенсию по стажу (каждому году свой минимальный стаж)
-		$(output_area).hide();
-		if(S == 0 && OS < 9) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 1 && OS < 10) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 2 && OS < 11) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 3 && OS < 12) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 4 && OS < 13) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 5 && OS < 14) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 6 && OS < 15) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-
-		//пересчёт права выхода на пенсию по ИПК (каждому году свой минимальный ИПК)
-		if(S == 0 && IPK < 13.8) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 1 && IPK < 16.2) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 2 && IPK < 18.6) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 3 && IPK < 21) {
-			socialPensionWarning2.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 4 && IPK < 23.4) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 5 && IPK < 25.8) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 6 && IPK < 28.2) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		if(S == 7 && IPK < 30) {
-			socialPensionWarning.show();
-			$(output_area).slideDown();
-			return false;
-		}
-
-		// Страховая пенсия
-		var SP = (calcParams.FIKS * calcParams.BPKop[retireWork] /** calcParams.CSH[selhoz]*/) +
-			(IPK * calcParams.CPK);
-
-		var newCoefSummCont = $("#newCoefSumm");
-		newCoefSummCont.html((Math.round(IPK * 100) / 100).toString());
-		var pensionIPartCont = $("#pensionIPart");
-		pensionIPartCont.html((Math.round(SP * 100) / 100).toString());
-		var personOSCont = $("#personOS");
-		personOSCont.html((Math.round(OS * 100) / 100).toString());
-
-		if(lang == 'ru') {
-			newCoefSummCont.html(newCoefSummCont.html().replace(/\./, ","));
-			pensionIPartCont.html(pensionIPartCont.html().replace(/\./, ","));
-			personOSCont.html(personOSCont.html().replace(/\./, ","));
-		}
-
-		calcResult.fadeIn();
-
-	}
-}
 
