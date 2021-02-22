@@ -6,7 +6,7 @@
     <title>Military calculator</title>
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?ver=2112121212">
 </head>
 <body>
 
@@ -371,7 +371,7 @@
 <script src="js/hint_texts.js"></script>
 <script src="js/params.js"></script>
 <script src="js/public.js"></script>
-<script src="js/balloon.js"></script>
+<script src="js/balloon.js?ver=2112"></script>
 
 <script>
 
@@ -390,7 +390,7 @@
             $.balloon('show', {
                 x: rect.left + window.scrollX + 75,
                 y: rect.top + window.scrollY - 10,
-                width: Math.min(400, window.innerWidth - 30), // ширина, но унитываем мобильную версию
+                width: Math.min(400, window.innerWidth), // ширина, но унитываем мобильную версию
                 innerContent: calcHintText[hintId],
                 triangleVerticalSide: false, // Язычок по умолчанию к горизонтальной грани,
                 hideTriangle: false, // Скрывать язычок
