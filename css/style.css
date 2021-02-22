@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 img
 {
     border-radius: 0 !important;
@@ -270,7 +274,7 @@ button.footer-button {
     position: absolute !important;
     right: 30px;
     top: 15px;
-    z-index: 10 !important;
+    z-index: 5 !important;
 }
 
 .nice-select .list
@@ -280,6 +284,13 @@ button.footer-button {
     width: 100%;
     max-height: 250px;
     overflow-y: auto !important;
+}
+
+.nice-select span {
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .nice-select::after
@@ -330,9 +341,8 @@ input[type='radio']
 
 @media (max-width: 500px)
 {
-    .calc-form .col-sm-5
-    {
-        margin-right: 25px;
+    form {
+        padding-right: 20px;
     }
 
     .calc-form
@@ -340,13 +350,13 @@ input[type='radio']
         padding-right: 20px !important;
     }
 
-    .pfr-calculator .calc-footer > div
+    /*.pfr-calculator .calc-footer > div
     {
         margin: 0 !important;
         min-width: 200px;
         justify-content: flex-end;
         display: flex;
-    }
+    }*/
 }
 
 .copyright
