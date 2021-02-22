@@ -293,6 +293,15 @@ button.footer-button {
     text-overflow: ellipsis;
 }
 
+.nice-select .option {
+    white-space: normal;
+    line-height: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: unset;
+
+}
+
 .nice-select::after
 {
     display: none !important;
