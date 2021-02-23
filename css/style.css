@@ -98,10 +98,6 @@ input::placeholder {
     color: #bdbdbd;
 }
 
-#yearsInArmy, #monthInArmy, #daysInArmy, #careYears, #careMonth, #careDays {
-    width: 65px;
-}
-
 #spis1, #spis2, #spis3, #spis4, #spis5, #spis6, #spis7, #war, #izd, #inv, #uinv {
     width: 205px;
     height: 44px;
@@ -186,50 +182,6 @@ button.footer-button {
     top: 7px;
 }
 
-#enterBYWarning, #wrongFee, #enterBYWarning3, #noTarif, #enterGenderWarning, #enterBYWarning2, #alreadyPensioneer {
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #EA9F9F;
-    justify-content: center;
-    align-items: center;
-    padding: 33px 20px;
-    text-align: center;
-}
-
-#enterBYWarning span.warn-text, #wrongFee span.warn-text, #enterBYWarning3 span.warn-text, #noTarif span.warn-text, #enterGenderWarning span.warn-text, #enterBYWarning2 span.warn-text, #alreadyPensioneer span.warn-text {
-    color: #ffffff;
-    font-size: 18px;
-    line-height: 140%;
-}
-
-#enterBYWarning span, #wrongFee span, #enterBYWarning3 span, #noTarif span, #enterGenderWarning span, #enterBYWarning2 span, #alreadyPensioneer span {
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 140%;
-}
-
-#socialPensionWarning, #socialPensionWarning2, #combinationWarning {
-    padding: 33px 30px;
-    text-align: center;
-    background-color: #F2F5F8;
-}
-
-#socialPensionWarning span.info-text, #socialPensionWarning2 span.info-text, #combinationWarning span.info-text {
-    color: #66758C;
-    font-size: 18px;
-    line-height: 25px;
-}
-
-#socialPensionWarning p, #socialPensionWarning2 p, #combinationWarning p {
-    color: #66758C;
-    font-size: 16px;
-    line-height: 22px;
-}
-
-#socialPensionWarning p span, #socialPensionWarning2 p span, #combinationWarning p span {
-    font-weight: bold;
-}
-
 .pensionCalcResult {
     box-sizing: border-box;
     background-color: #F2F5F8;
@@ -255,10 +207,7 @@ button.footer-button {
 
 @media (min-width: 700px)
 {
-    .col-sm-7
-    {
-        min-width: 380px !important;
-    }
+
 }
 
 .col-sm-12 {
@@ -359,13 +308,6 @@ input[type='radio']
         padding-right: 20px !important;
     }
 
-    /*.pfr-calculator .calc-footer > div
-    {
-        margin: 0 !important;
-        min-width: 200px;
-        justify-content: flex-end;
-        display: flex;
-    }*/
 }
 
 .copyright
@@ -396,6 +338,7 @@ a.bg-youtube-link-wrapper, .calc-footer a
 
 .balloon
 {
+    box-sizing: border-box;
     position: absolute;
     z-index: 1000;
     height: auto;
@@ -412,10 +355,9 @@ a.bg-youtube-link-wrapper, .calc-footer a
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-
     border-bottom: 5px solid #fff;
     position: absolute;
-    right: 50px;
+    right: 13px;
     top: -5px;
 }
 
@@ -427,6 +369,6 @@ a.bg-youtube-link-wrapper, .calc-footer a
 
     border-top: 20px solid #fff;
     position: absolute;
-    right: 35px;
+    right: 0px;
     bottom: -5px;
 }
