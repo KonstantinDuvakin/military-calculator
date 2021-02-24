@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Military calculator</title>
-    <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/style.css?ver=123">
+    <link rel="stylesheet" href="dist/bundle.css">
 </head>
 <body>
 
@@ -38,7 +36,7 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis1" name="spis1" onchange="main()" required tabindex="-1">
+                        <select class="w-100 px-3" id="spis1" name="spis1" required tabindex="-1">
                             <option value="">Укажите тарифный разряд по воинской должности</option>
                             <option value="hand">Указать размер оклада вручную</option>
                             <option value="10848">1 тарифный разряд(стрелок, маскировщик, дорожник)</option>
@@ -96,7 +94,7 @@
                     </div>
                     <div class="col-md-12 mb-3 ml-1" id="spis1_group_hand" style="display: none">
                         <label for="spis1_hand">Оклад по воинской должности (ввод вручную)</label><br>
-                        <input class="w-100 mt-3" id="spis1_hand" name="spis1_hand" onkeyup="main()" placeholder="Укажите размер оклада" type="text" value="">
+                        <input class="w-100 mt-3" id="spis1_hand" name="spis1_hand" placeholder="Укажите размер оклада" type="text" value="">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis2"><span>Оклад по воинскому званию</span></label>
@@ -106,7 +104,7 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis2" name="spis2" onchange="main()" required tabindex="-1">
+                        <select class="w-100 px-3" id="spis2" name="spis2" required tabindex="-1">
                             <option value="">Укажите воинское звание</option>
                             <option value="hand">Указать размер оклада вручную</option>
                             <option value="5424">Рядовой, матрос</option>
@@ -134,14 +132,14 @@
                     </div>
                     <div class="col-md-12 mb-3 ml-1" id="spis2_group_hand" style="display: none">
                         <label for="spis2_hand">Оклад по воинскому званию (ввод вручную)</label>
-                        <input class="w-100 mt-3" id="spis2_hand" name="spis2_hand" onkeyup="main()" placeholder="Укажите размер оклада" type="text" value="">
+                        <input class="w-100 mt-3" id="spis2_hand" name="spis2_hand" placeholder="Укажите размер оклада" type="text" value="">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis3"><span>Надбавка за квалификационную категорию летному составу</span></label>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis3" name="spis3" onchange="main()" required>
+                        <select class="w-100 px-3" id="spis3" name="spis3" required>
                             <option value="">Укажите квалификационную категорию</option>
                             <option value="1">Отсутствие квалификационной категории</option>
                             <option value="1.15">Летчик (штурман) второго класса, летчик (штурман) - инструктор второго класса</option>
@@ -161,7 +159,7 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis4" name="spis4" onchange="main()" required>
+                        <select class="w-100 px-3" id="spis4" name="spis4" required>
                             <option value="">Укажите выслугу для исчисления надбавки за выслугу лет</option>
                             <option value="0.15">от 5 до 10 лет - 15 %</option>
                             <option value="0.20">от 10 до 15 лет - 20 %</option>
@@ -176,7 +174,7 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis5" name="spis5" onchange="main()" required>
+                        <select class="w-100 px-3" id="spis5" name="spis5" required>
                             <option value="">Укажите выслугу лет на пенсию</option>
                             <option value="0.50">20 лет - 50 %</option>
                             <option value="0.53">21 год - 53 %</option>
@@ -199,7 +197,7 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis6" name="spis6" onchange="main()">
+                        <select class="w-100 px-3" id="spis6" name="spis6">
                             <option value="1.0">Нет</option>
                             <option value="1.15">1.15</option>
                             <option value="1.2">1.2</option>
@@ -219,7 +217,7 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="war" name="war" onchange="main()">
+                        <select class="w-100 px-3" id="war" name="war">
                             <option value="0">Нет</option>
                             <option value="1587.15">Да (с 01.01.2017 г. - 1587,15 руб.)</option>
                             <option value="1610.96">Да (с 01.01.2018 г. - 1610,96 руб.)</option>
@@ -234,7 +232,7 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="izd" name="izd" onchange="main()">
+                        <select class="w-100 px-3" id="izd" name="izd">
                             <option value="0">Нет</option>
                             <option value="1690.83">1 иждивенец (с 01.04.2019 г. - 32 % расчетного размера пенсии (1690,83 руб.)</option>
                             <option value="3381.66">2 иждивенца (с 01.04.2019 г. - 64 % расчетного размера пенсии (3381,66 руб.)</option>
@@ -247,7 +245,7 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="inv" name="inv" onchange="main()">
+                        <select class="w-100 px-3" id="inv" name="inv">
                             <option value="0">Нет</option>
                             <option value="5283.84">Инвалид I гр. либо возраст 80-лет (с 01.04.2019 г. - 100 % расчетного размера пенсии (5283.84 руб.)</option>
                         </select>
@@ -258,7 +256,7 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="uinv" name="uinv" onchange="main()">
+                        <select class="w-100 px-3" id="uinv" name="uinv">
                             <option value="0">Нет</option>
                             <option value="15851.52">Инвалиды I гр. вследствие военной травмы (300% РРП - 15 851,52 руб.) (с 01.04.2019 г. - расчетный размер пенсии (РРП) - 5283, 84 руб.)</option>
                             <option value="13209.6">Инвалиды II гр. вследствие военной травмы (250% РРП - 13209,6 руб.) (с 01.04.2019 г. - расчетный размер пенсии (РРП) - 5283.84 руб.)</option>
@@ -277,7 +275,7 @@
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
-                        <select class="w-100 px-3" id="spis7" name="spis7" onchange="main()">
+                        <select class="w-100 px-3" id="spis7" name="spis7">
                             <option selected="selected" value="1.0">Без коэффициента</option>
                             <option value="0.5805">с 01.10.2013 г. (58,05%)</option>
                             <option value="0.6005">с 01.01.2014 г. (60,05%)</option>
@@ -365,40 +363,7 @@
     </div>
 </div>
 
-<script src="js/jquery.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-<script src="js/hint_texts.js"></script>
-<script src="js/public.js"></script>
-<script src="js/balloon.js"></script>
-
-<script>
-
-    $('select').niceSelect();
-
-    $('.help-link').each(function () {
-        $(this).click(function (e) {
-            var hintId = $(this).attr('data-help-id');
-            var rect = e.target.getBoundingClientRect();
-
-            $.balloon('show', {
-                x: rect.left + window.scrollX + 75,
-                y: rect.top + window.scrollY - 10,
-                width: Math.min(400, window.innerWidth - 30), // ширина, но унитываем мобильную версию
-                innerContent: calcHintText[hintId],
-                triangleVerticalSide: false, // Язычок по умолчанию к горизонтальной грани,
-                hideTriangle: false, // Скрывать язычок
-                clickEvent: false, // По умолчанию показываем по наведению
-                closeButton: true // Для открывания по клику по умолчанию показываем кнопку закрытия
-            });
-        });
-    });
-
-    let form = document.querySelector('form');
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-    });
-
-</script>
+<script src="dist/bundle.js"></script>
 
 </body>
 </html>
