@@ -373,6 +373,24 @@ function initMilitaryCalculator (container, options)
 </div>
     `;
 
+    if (options.fast !== '1')
+    {
+        container.innerHTML = html;
+    }
+
+    if (options.hideCopyright === "1")
+    {
+        let copyright = container.querySelector('.copyright');
+        if (copyright)
+        {
+            copyright.style.display = 'none';
+        }
+    }
+
+    container.querySelector('.performCalc').style.background = options.buttonColor;
+    container.querySelector('.performCalc').style.color = options.buttonTextColor;
+    container.querySelector('.calc-form').style.backgroundColor = options.background;
+
 
     $('select').niceSelect();
 
