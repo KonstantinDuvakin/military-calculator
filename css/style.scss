@@ -1,370 +1,353 @@
-body {
-    margin: 0;
-}
+.military-calculator {
 
-img
-{
-    border-radius: 0 !important;
-    max-width: unset !important;
-}
-
-.calc-form {
-    background-color: #F6F8FB;
-}
-
-label span {
-    font-size: 16px;
-    line-height: 130%;
-    color: #353535;
-    padding-bottom: 10px;
-}
-
-.col-md-12 {
-    margin-bottom: 15px;
-}
-
-.col-md-12 a {
-    text-decoration-line: underline;
-    color: #4D82CF;
-    font-size: 14px;
-    line-height: 130%;
-}
-
-.text-secondary {
-    font-size: 14px;
-    line-height: 18.2px;
-    color: #989898;
-}
-
-.bottom-link {
-    color: #8690A0;
-}
-
-select {
-    position: absolute;
-    font-size: 16px;
-    color: #555555;
-    display: block !important;
-    margin: 0;
-    border: 0;
-    padding: 0;
-    height: 1px;
-    opacity: 0;
-    /* Top should be the same as the height of your */
-    /* unfocused, nice select replacement element! */
-    /*top: 40px;*/
-}
-
-.nice-select span {
-    font-size: 16px;
-}
-
-button.blue-button {
-    background-color: #D6E36E;
-    border: none;
-    box-shadow: none;
-    border-radius: 5px;
-    width: 205px;
-    height: 48px;
-    color: #585F22;
-}
-
-.radio-size {
-    transform: scale(1.5);
-    opacity: 0.9;
-    cursor: pointer;
-    color: #5D5D5D;
-}
-
-input {
-    box-sizing: border-box;
-}
-
-input[type='text'] {
-    width: 205px;
-    height: 44px;
-    border-radius: 5px;
-    border: 1px solid #ECF0F5;
-    color: black;
-    font-size: 16px;
-    padding: 0 15px;
-    font-weight: normal !important;
-    box-shadow: none;
-}
-
-input::placeholder {
-    font-size: 16px;
-    color: #bdbdbd;
-}
-
-#spis1, #spis2, #spis3, #spis4, #spis5, #spis6, #spis7, #war, #izd, #inv, #uinv {
-    width: 205px;
-    height: 44px;
-    background-color: #ffffff;
-    border: 1px solid #E1E7EE;
-    border-radius: 5px;
-}
-
-.online-calculator {
-    font-size: 20px;
-    line-height: 110%;
-    color: #353535;
-}
-
-.video-instruction {
-    font-size: 14px;
-    line-height: 110%;
-    color: #293342;
-}
-
-.bg-youtube-link {
-    background-color: #EFF3FA;
-    border-radius: 5px;
-    height: 64px;
-}
-
-.position-relative {
-    position: relative;
-}
-
-.help-link {
-    position: absolute !important;
-    right: -15px;
-    cursor: pointer !important;
-}
-
-.pfr-calculator .calc-footer {
-    float: right;
-}
-
-a {
-    text-decoration: none;
-    color: #555555;
-}
-
-.calc-footer-text {
-    font-size: 14px;
-    color: #353535;
-}
-
-button.footer-button {
-    background-color: #ffffff;
-    border: none;
-    box-shadow: none;
-}
-
-.fb {
-    width: 26px;
-    height: 26px;
-    border-radius: 4px;
-    background-color: #4F729A;
-    position: relative;
-}
-
-.icon-fb {
-    position: absolute !important;
-    left: 10px;
-    top: 6px;
-}
-
-.twitter {
-    width: 26px;
-    height: 26px;
-    border-radius: 4px;
-    background-color: #47AAE7;
-    position: relative;
-}
-
-.icon-twitter {
-    position: absolute !important;
-    left: 7px;
-    top: 7px;
-}
-
-.pensionCalcResult {
-    box-sizing: border-box;
-    background-color: #F2F5F8;
-    display: none;
-}
-
-.pensionCalcResult.open {
-    display: block;
-}
-
-.pensionCalcResult h2 {
-    margin-top: 0;
-    padding-top: 33px;
-    padding-bottom: 16px;
-    font-size: 20px;
-    line-height: 28px;
-    color: #353535;
-}
-
-.pensionCalcResult .col-sm-5 {
-    text-align: right;
-}
-
-@media (min-width: 700px)
-{
-
-}
-
-.col-sm-12 {
-    padding-right: 80px;
-}
-
-.pensionCalcResult .col-sm-5 {
-    padding-right: 80px;
-}
-
-.arrow
-{
-    position: absolute !important;
-    right: 30px;
-    top: 15px;
-    z-index: 5 !important;
-}
-
-.nice-select .list
-{
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    width: 100%;
-    max-height: 250px;
-    overflow-y: auto !important;
-}
-
-.nice-select span {
-    max-width: 100%;
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.nice-select .option {
-    white-space: normal;
-    line-height: 20px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    min-height: unset;
-
-}
-
-.nice-select::after
-{
-    display: none !important;
-}
-
-.nice-select .option.selected, .option:hover
-{
-    font-weight: normal !important;
-    background-color: #F5F7FA !important;
-}
-
-.nice-select .option:not(.selected):not(:hover)
-{
-    background-color: #fff !important;
-}
-
-.radio-image
-{
-    position: absolute !important;
-    z-index: 2 !important;
-    top: -2px;
-}
-
-.calc-form .d-flex img.radio-image-point
-{
-    display: none;
-}
-
-.radio-image-point
-{
-    position: absolute !important;
-    z-index: 2 !important;
-    top: 2px;
-    left: 4px;
-}
-
-input[type='radio']
-{
-    opacity: 0;
-}
-
-.pfr-calculator
-{
-    width: 100%;
-}
-
-@media (max-width: 500px)
-{
-
-    .calc-form
-    {
-        padding-right: 20px !important;
+    body {
+        margin: 0;
     }
 
-}
+    img {
+        border-radius: 0 !important;
+        max-width: unset !important;
+    }
 
-.copyright
-{
-    background: none !important;
-    padding: 0 !important;
-}
+    .calc-form {
+        background-color: #F6F8FB;
+    }
 
-.copyright a
-{
-    text-decoration: underline !important;
-}
+    label span {
+        font-size: 16px;
+        line-height: 130%;
+        color: #353535;
+        padding-bottom: 10px;
+    }
 
-.with-warning
-{
-    border-color: #E9A4A4 !important;
-}
+    .col-md-12 {
+        margin-bottom: 15px;
+    }
 
-.calc-footer img
-{
-    border-radius: 0 !important;
-}
+    .col-md-12 a {
+        text-decoration-line: underline;
+        color: #4D82CF;
+        font-size: 14px;
+        line-height: 130%;
+    }
 
-a.bg-youtube-link-wrapper, .calc-footer a
-{
-    text-decoration: none !important;
-}
+    .text-secondary {
+        font-size: 14px;
+        line-height: 18.2px;
+        color: #989898;
+    }
 
-.balloon
-{
-    box-sizing: border-box;
-    position: absolute;
-    z-index: 1000;
-    height: auto;
-    background: #fff;
-    box-shadow: 0px 2px 30px #E8EAEE;
-    padding: 12px 18px;
-    font-size: 13px;
-    line-height: 140%;
-    color: #3B3C41;
-}
+    .bottom-link {
+        color: #8690A0;
+    }
 
-.arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid #fff;
-    position: absolute;
-    right: 13px;
-    top: -5px;
-}
+    select {
+        position: absolute;
+        font-size: 16px;
+        color: #555555;
+        display: block !important;
+        margin: 0;
+        border: 0;
+        padding: 0;
+        height: 1px;
+        opacity: 0;
+        /* Top should be the same as the height of your */
+        /* unfocused, nice select replacement element! */
+        /*top: 40px;*/
+    }
 
-.arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
+    .nice-select span {
+        font-size: 16px;
+    }
 
-    border-top: 20px solid #fff;
-    position: absolute;
-    right: 0px;
-    bottom: -5px;
+    button.blue-button {
+        background-color: #D6E36E;
+        border: none;
+        box-shadow: none;
+        border-radius: 5px;
+        width: 205px;
+        height: 48px;
+        color: #585F22;
+    }
+
+    .radio-size {
+        transform: scale(1.5);
+        opacity: 0.9;
+        cursor: pointer;
+        color: #5D5D5D;
+    }
+
+    input {
+        box-sizing: border-box;
+    }
+
+    input[type='text'] {
+        width: 205px;
+        height: 44px;
+        border-radius: 5px;
+        border: 1px solid #ECF0F5;
+        color: black;
+        font-size: 16px;
+        padding: 0 15px;
+        font-weight: normal !important;
+        box-shadow: none;
+    }
+
+    input::placeholder {
+        font-size: 16px;
+        color: #bdbdbd;
+    }
+
+    #spis1, #spis2, #spis3, #spis4, #spis5, #spis6, #spis7, #war, #izd, #inv, #uinv {
+        width: 205px;
+        height: 44px;
+        background-color: #ffffff;
+        border: 1px solid #E1E7EE;
+        border-radius: 5px;
+    }
+
+    .online-calculator {
+        font-size: 20px;
+        line-height: 110%;
+        color: #353535;
+    }
+
+    .video-instruction {
+        font-size: 14px;
+        line-height: 110%;
+        color: #293342;
+    }
+
+    .bg-youtube-link {
+        background-color: #EFF3FA;
+        border-radius: 5px;
+        height: 64px;
+    }
+
+    .position-relative {
+        position: relative;
+    }
+
+    .help-link {
+        position: absolute !important;
+        right: -15px;
+        cursor: pointer !important;
+    }
+
+    .pfr-calculator .calc-footer {
+        float: right;
+    }
+
+    a {
+        text-decoration: none;
+        color: #555555;
+    }
+
+    .calc-footer-text {
+        font-size: 14px;
+        color: #353535;
+    }
+
+    button.footer-button {
+        background-color: #ffffff;
+        border: none;
+        box-shadow: none;
+    }
+
+    .fb {
+        width: 26px;
+        height: 26px;
+        border-radius: 4px;
+        background-color: #4F729A;
+        position: relative;
+    }
+
+    .icon-fb {
+        position: absolute !important;
+        left: 10px;
+        top: 6px;
+    }
+
+    .twitter {
+        width: 26px;
+        height: 26px;
+        border-radius: 4px;
+        background-color: #47AAE7;
+        position: relative;
+    }
+
+    .icon-twitter {
+        position: absolute !important;
+        left: 7px;
+        top: 7px;
+    }
+
+    .pensionCalcResult {
+        box-sizing: border-box;
+        background-color: #F2F5F8;
+        display: none;
+    }
+
+    .pensionCalcResult.open {
+        display: block;
+    }
+
+    .pensionCalcResult h2 {
+        margin-top: 0;
+        padding-top: 33px;
+        padding-bottom: 16px;
+        font-size: 20px;
+        line-height: 28px;
+        color: #353535;
+    }
+
+    .pensionCalcResult .col-sm-5 {
+        text-align: right;
+    }
+
+    @media (min-width: 700px) {
+
+    }
+
+    .col-sm-12 {
+        padding-right: 80px;
+    }
+
+    .pensionCalcResult .col-sm-5 {
+        padding-right: 80px;
+    }
+
+    .arrow {
+        position: absolute !important;
+        right: 30px;
+        top: 15px;
+        z-index: 5 !important;
+    }
+
+    .nice-select .list {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100%;
+        max-height: 250px;
+        overflow-y: auto !important;
+    }
+
+    .nice-select span {
+        max-width: 100%;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nice-select .option {
+        white-space: normal;
+        line-height: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        min-height: unset;
+
+    }
+
+    .nice-select::after {
+        display: none !important;
+    }
+
+    .nice-select .option.selected, .option:hover {
+        font-weight: normal !important;
+        background-color: #F5F7FA !important;
+    }
+
+    .nice-select .option:not(.selected):not(:hover) {
+        background-color: #fff !important;
+    }
+
+    .radio-image {
+        position: absolute !important;
+        z-index: 2 !important;
+        top: -2px;
+    }
+
+    .calc-form .d-flex img.radio-image-point {
+        display: none;
+    }
+
+    .radio-image-point {
+        position: absolute !important;
+        z-index: 2 !important;
+        top: 2px;
+        left: 4px;
+    }
+
+    input[type='radio'] {
+        opacity: 0;
+    }
+
+    .pfr-calculator {
+        width: 100%;
+    }
+
+    @media (max-width: 500px) {
+
+        .calc-form {
+            padding-right: 20px !important;
+        }
+
+    }
+
+    .copyright {
+        background: none !important;
+        padding: 0 !important;
+    }
+
+    .copyright a {
+        text-decoration: underline !important;
+    }
+
+    .with-warning {
+        border-color: #E9A4A4 !important;
+    }
+
+    .calc-footer img {
+        border-radius: 0 !important;
+    }
+
+    a.bg-youtube-link-wrapper, .calc-footer a {
+        text-decoration: none !important;
+    }
+
+    .balloon {
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 1000;
+        height: auto;
+        background: #fff;
+        box-shadow: 0px 2px 30px #E8EAEE;
+        padding: 12px 18px;
+        font-size: 13px;
+        line-height: 140%;
+        color: #3B3C41;
+    }
+
+    .arrow-up {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #fff;
+        position: absolute;
+        right: 13px;
+        top: -5px;
+    }
+
+    .arrow-down {
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+
+        border-top: 20px solid #fff;
+        position: absolute;
+        right: 0px;
+        bottom: -5px;
+    }
 }
