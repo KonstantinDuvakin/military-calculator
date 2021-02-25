@@ -1,11 +1,11 @@
 import $ from "jquery";
 
-console.log('init calc widget');
+export default function initWidgetLogic() {
+	console.log('init calc widget');
 	var lang = $("input#calc-lang");
-	if(lang.length) {
+	if (lang.length) {
 		lang = lang.val();
-	}
-	else {
+	} else {
 		lang = 'ru';
 	}
 
@@ -23,7 +23,7 @@ console.log('init calc widget');
 
 	textInputs.blur(function () {
 		$(this).val($(this).val().toString().replace(/,/, '.').replace(/[^\d.,]+/, ''));
-		if($(this).val() == '') $(this).val(prevValues[$(this).attr('id')]);
+		if ($(this).val() == '') $(this).val(prevValues[$(this).attr('id')]);
 	});
 
 	let input = document.querySelectorAll('input');
@@ -39,8 +39,8 @@ console.log('init calc widget');
 		return Math.round(value * precision_number) / precision_number;
 	};
 
-	for(let sel of select) {
-		sel.onchange = function() {
+	for (let sel of select) {
+		sel.onchange = function () {
 			spis1 = document.vvodznac.spis1.value;
 			if (spis1 === 'hand') {
 				document.getElementById('spis1_group_hand').style.display = 'block';
@@ -89,10 +89,11 @@ console.log('init calc widget');
 
 			value = modRound((((spis1 * spis3 + spis2) + (spis1 * spis3 + spis2) * spis4) * spis6) * spis5 * spis7 + war + izd * spis6 + inv * spis6 + uinv * spis6, 2);
 		};
-	};
+	}
+	;
 
-	for(let inp of input) {
-		inp.onkeyup = function() {
+	for (let inp of input) {
+		inp.onkeyup = function () {
 			spis1 = document.vvodznac.spis1.value;
 			if (spis1 === 'hand') {
 				document.getElementById('spis1_group_hand').style.display = 'block';
@@ -141,7 +142,8 @@ console.log('init calc widget');
 
 			value = modRound((((spis1 * spis3 + spis2) + (spis1 * spis3 + spis2) * spis4) * spis6) * spis5 * spis7 + war + izd * spis6 + inv * spis6 + uinv * spis6, 2);
 		};
-	};
+	}
+	;
 
 	/*function main() {
 
@@ -195,7 +197,6 @@ console.log('init calc widget');
 	}*/
 
 	$(".performCalc").click(function () {
-		//$('.result-bottom').hide();
 		calcResult.hide();
 		if (spis1 === undefined || isNaN(spis1) || spis2 === undefined || isNaN(spis2) || spis3 === undefined || isNaN(spis3) || spis4 === undefined || isNaN(spis4) || spis5 === undefined || isNaN(spis5)) {
 			return;
@@ -205,7 +206,7 @@ console.log('init calc widget');
 			calcResult.fadeIn();
 		}
 	});
-
+};
 
 
 

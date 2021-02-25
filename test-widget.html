@@ -1,7 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Military calculator</title>
+</head>
+<body>
 <div class="military-calculator" data-background="#F6F8FB" data-button-color="#D6E36E" data-button-text-color="#585F22" data-hide-copyright="0"></div>
 
 <script>
-    console.log(html);
 
     (function(e,t,n){
         if(e.getElementById(n))return;
@@ -10,7 +17,10 @@
         r.setAttribute('widget-class', n);
         r.setAttribute('id', "militaryCalc");
         r.id = "militaryCalc";
-        r.src="dist/bundle.js";
+        r.src="//military.pfrf-kabinet.ru/dist/bundle.js";
         i.parentNode.insertBefore(r,i)
     })(document,"script","military-calculator");
 </script>
+</body>
+</html>
+

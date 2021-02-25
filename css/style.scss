@@ -10,7 +10,6 @@ img
 
 .calc-form {
     background-color: #F6F8FB;
-    padding-right: 80px;
 }
 
 label span {
@@ -299,9 +298,6 @@ input[type='radio']
 
 @media (max-width: 500px)
 {
-    form {
-        padding-right: 20px;
-    }
 
     .calc-form
     {

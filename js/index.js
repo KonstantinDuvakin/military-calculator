@@ -1,6 +1,4 @@
 import "./jquery.nice-select.min";
-import "./balloon";
-import "./hint_texts";
 import "./public";
 
 import "../css/style.scss";
@@ -8,28 +6,28 @@ import "../css/grid.scss";
 import "../css/nice-select.scss";
 
 import $ from "jquery";
-import {calcHintText} from "./hint_texts";
+import initWidgetLogic from "./public";
 
 function initMilitaryCalculator (container, options)
 {
     let html = `
-		<link rel="stylesheet" href="dist/bundle.css">
+		<link rel="stylesheet" href="https://military.pfrf-kabinet.ru/dist/bundle.css">
 	`;
 
     html += `
 <div class="d-flex justify-content-center">
     <div class="w-100">
-        <div class="calc-form pt-4 pb-5 pl-4">
+        <div class="calc-form pt-4 pb-5 px-4">
             <div class="row">
                 <div class="col-sm-6 my-3 align-self-center d-flex">
-                    <img class="mr-4" src="img/logo.svg" alt="Онлайн калькулятор пенсии">
+                    <img class="mr-4" src="https://military.pfrf-kabinet.ru/img/logo.svg" alt="Онлайн калькулятор пенсии">
                     <span class="online-calculator align-self-center">Калькулятор военной
                     <br>пенсии за выслугу лет</span>
                 </div>
                 <div class="col-sm-6 my-3 align-items-end d-flex justify-content-end">
                     <a href="" class="bg-youtube-link-wrapper">
                         <div class="bg-youtube-link align-items-center justify-content-center d-flex pl-3 pr-4">
-                            <img class="mr-4 ml-2" src="https://kalkulyator.pfrf-kabinet.ru/img/youtube.svg" alt="Видео инструкция">
+                            <img class="mr-4 ml-2" src="https://military.pfrf-kabinet.ru/img/youtube.svg" alt="Видео инструкция">
                             <span class="video-instruction">Видео инструкция<br>для калькулятора</span>
                         </div>
                     </a>
@@ -44,7 +42,7 @@ function initMilitaryCalculator (container, options)
                         <a href="http://voensud-mo.ru/content/DD/01.10.2019" target="_blank">(тарифный разряд по штатной воинской должности)</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="spis1" name="spis1" required tabindex="-1">
                             <option value="">Укажите тарифный разряд по воинской должности</option>
                             <option value="hand">Указать размер оклада вручную</option>
@@ -99,7 +97,6 @@ function initMilitaryCalculator (container, options)
                             <option value="47728">49 тарифный разряд (заместитель МО РФ)</option>
                             <option value="48813">50 тарифный разряд (первый заместитель МО РФ)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis1">
                     </div>
                     <div class="col-md-12 mb-3 ml-1" id="spis1_group_hand" style="display: none">
                         <label for="spis1_hand">Оклад по воинской должности (ввод вручную)</label><br>
@@ -112,7 +109,7 @@ function initMilitaryCalculator (container, options)
                         <a href="http://voensud-mo.ru/content/oklady/01.10.2019/OVZ" target="_blank">(Приложение №2)</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="spis2" name="spis2" required tabindex="-1">
                             <option value="">Укажите воинское звание</option>
                             <option value="hand">Указать размер оклада вручную</option>
@@ -137,7 +134,6 @@ function initMilitaryCalculator (container, options)
                             <option value="29288">Генерал армии, адмирал флота</option>
                             <option value="32542">Маршал Российской Федерации</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis2">
                     </div>
                     <div class="col-md-12 mb-3 ml-1" id="spis2_group_hand" style="display: none">
                         <label for="spis2_hand">Оклад по воинскому званию (ввод вручную)</label>
@@ -147,7 +143,7 @@ function initMilitaryCalculator (container, options)
                         <label for="spis3"><span>Надбавка за квалификационную категорию летному составу</span></label>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="spis3" name="spis3" required>
                             <option value="">Укажите квалификационную категорию</option>
                             <option value="1">Отсутствие квалификационной категории</option>
@@ -158,7 +154,6 @@ function initMilitaryCalculator (container, options)
                             <option value="1.15">Бортовой специалист первого класса</option>
                             <option value="1.2">Бортовой специалист-мастер</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis3">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis4"><span>Надбавка за выслугу лет</span></label>
@@ -167,7 +162,7 @@ function initMilitaryCalculator (container, options)
                         <a href="http://voensud-mo.ru/doc/mil/order%20/2011/2700#40" target="_blank">(п.40)**</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="spis4" name="spis4" required>
                             <option value="">Укажите выслугу для исчисления надбавки за выслугу лет</option>
                             <option value="0.15">от 5 до 10 лет - 15 %</option>
@@ -176,13 +171,12 @@ function initMilitaryCalculator (container, options)
                             <option value="0.30">от 20 до 25 лет - 30 %</option>
                             <option value="0.40">от 25 лет и более - 40 %</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis4">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis5"><span>Общая продолжительность службы, учитываемая для назначении пенсии</span></label>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="spis5" name="spis5" required>
                             <option value="">Укажите выслугу лет на пенсию</option>
                             <option value="0.50">20 лет - 50 %</option>
@@ -199,13 +193,12 @@ function initMilitaryCalculator (container, options)
                             <option value="0.83">31 год - 83 %</option>
                             <option value="0.85">32 года или более - 85 %</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis5">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis6"><span>Районный коэффициент</span></label>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="spis6" name="spis6">
                             <option value="1.0">Нет</option>
                             <option value="1.15">1.15</option>
@@ -219,13 +212,12 @@ function initMilitaryCalculator (container, options)
                             <option value="1.8">1.8</option>
                             <option value="2.0">2.0</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis6">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="war"><span>Повышение пенсии (надбавка) ветерану боевых действий*</span></label>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="war" name="war">
                             <option value="0">Нет</option>
                             <option value="1587.15">Да (с 01.01.2017 г. - 1587,15 руб.)</option>
@@ -234,37 +226,34 @@ function initMilitaryCalculator (container, options)
                             <option value="1690.83">Да (с 01.04.2019 г. - 1690,83 руб.)</option>
                             <option value="1793.97">Да (с 01.04.2020 г. - 1793,97 руб.)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="war">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="izd"><span>Надбавка неработающим пенсионерам, имеющим нетрудоспособных иждивенцев*</span></label>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="izd" name="izd">
                             <option value="0">Нет</option>
                             <option value="1690.83">1 иждивенец (с 01.04.2019 г. - 32 % расчетного размера пенсии (1690,83 руб.)</option>
                             <option value="3381.66">2 иждивенца (с 01.04.2019 г. - 64 % расчетного размера пенсии (3381,66 руб.)</option>
                             <option value="5283.84">3 и более иждивенцев (100 % расчетного размера пенсии (5283,84 руб.)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="izd">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="inv"><span>Надбавка пенсионерам, являющимся инвалидами I группы либо достигшим 80-летнего возраста*</span></label>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="inv" name="inv">
                             <option value="0">Нет</option>
                             <option value="5283.84">Инвалид I гр. либо возраст 80-лет (с 01.04.2019 г. - 100 % расчетного размера пенсии (5283.84 руб.)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="inv">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="uinv"><span>Увеличение пенсии за выслугу лет инвалидам I-III группы*</span></label>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="uinv" name="uinv">
                             <option value="0">Нет</option>
                             <option value="15851.52">Инвалиды I гр. вследствие военной травмы (300% РРП - 15 851,52 руб.) (с 01.04.2019 г. - расчетный размер пенсии (РРП) - 5283, 84 руб.)</option>
@@ -274,7 +263,6 @@ function initMilitaryCalculator (container, options)
                             <option value="10567.68">Инвалиды II гр., участники ВОВ, ставшие инвалидами вследствие общего заболевания, трудового увечья и других причин (за исключением лиц, инвалидность которых наступила вследствие их противоправных действий) (200% РРП - 10567,68 руб.) (с 01.04.2019 г. - расчетный размер пенсии (РРП) - 5283.84 руб.)</option>
                             <option value="7925.76">Инвалиды III гр., участники ВОВ, ставшие инвалидами вследствие общего заболевания, трудового увечья и других причин (за исключением лиц, инвалидность которых наступила вследствие их противоправных действий) (150% РРП - 7924,76 руб.) (с 01.04.2019 г. - расчетный размер пенсии (РРП) - 5283.84 руб.)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="uinv">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis7"><span>Укажите дату, на которую необходимо рассчитать военную пенсию</span></label>
@@ -283,7 +271,7 @@ function initMilitaryCalculator (container, options)
                         <a href="http://voensud-mo.ru/pension#Р" target="_blank">(см. понижающий коэффициент)</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
+                        <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
                         <select class="w-100 px-3" id="spis7" name="spis7">
                             <option selected="selected" value="1.0">Без коэффициента</option>
                             <option value="0.5805">с 01.10.2013 г. (58,05%)</option>
@@ -310,7 +298,6 @@ function initMilitaryCalculator (container, options)
                             <option value="0.98">2034 год (98%)</option>
                             <option value="1.0">2035 год (100%)</option>
                         </select>
-                        <img src="https://kalkulyator.pfrf-kabinet.ru/img/question.svg" alt="?" class="help-link gender pl-3 align-self-center" data-help-id="spis7">
                     </div>
                 </div>
                 <div class="row mt-5">
@@ -340,31 +327,31 @@ function initMilitaryCalculator (container, options)
         <div class="calc-footer justify-content-end d-flex flex-wrap pr-2">
             <div class="py-3 align-self-center mr-4">
                 <a class="footer-button d-flex" href="/">
-                    <img class="mr-2 align-self-center" src="https://kalkulyator.pfrf-kabinet.ru/img/warning.svg" alt="Внимание!">
+                    <img class="mr-2 align-self-center" src="https://military.pfrf-kabinet.ru/img/warning.svg" alt="Внимание!">
                     <span class="calc-footer-text">Сообщить об ошибке</span>
                 </a>
             </div>
             <div class="py-3 align-self-center mr-4">
                 <a class="footer-button d-flex" href="/">
-                    <img class="mr-2 align-self-center" src="https://kalkulyator.pfrf-kabinet.ru/img/bracket.svg" alt="Скобки">
+                    <img class="mr-2 align-self-center" src="https://military.pfrf-kabinet.ru/img/bracket.svg" alt="Скобки">
                     <span class="calc-footer-text">Виджет для сайта</span>
                 </a>
             </div>
             <div class="py-3 d-flex">
                 <a class="footer-button d-flex mr-1" href="https://vk.com/share.php?url=${location.href}">
-                    <img class="align-self-center" src="https://kalkulyator.pfrf-kabinet.ru/img/vk.svg" alt="ВКонтакте">
+                    <img class="align-self-center" src="https://military.pfrf-kabinet.ru/img/vk.svg" alt="ВКонтакте">
                 </a>
                 <a class="footer-button d-flex mr-1" href="https://connect.ok.ru/offer?url=${location.href}">
-                    <img class="align-self-center" src="https://kalkulyator.pfrf-kabinet.ru/img/odnoklassniki.svg" alt="Одноклассники">
+                    <img class="align-self-center" src="https://military.pfrf-kabinet.ru/img/odnoklassniki.svg" alt="Одноклассники">
                 </a>
                 <a class="footer-button d-flex mr-1" href="https://www.facebook.com/sharer/sharer.php?u=${location.href}">
                     <div class="fb">
-                        <img class="icon-fb" src="https://kalkulyator.pfrf-kabinet.ru/img/facebook.svg" alt="Facebook">
+                        <img class="icon-fb" src="https://military.pfrf-kabinet.ru/img/facebook.svg" alt="Facebook">
                     </div>
                 </a>
                 <a class="footer-button d-flex mr-1" href="http://twitter.com/share?url=${location.href}">
                     <div class="twitter">
-                        <img class="icon-twitter" src="https://kalkulyator.pfrf-kabinet.ru/img/twitter.svg" alt="Twitter">
+                        <img class="icon-twitter" src="https://military.pfrf-kabinet.ru/img/twitter.svg" alt="Twitter">
                     </div>
                 </a>
             </div>
@@ -377,6 +364,8 @@ function initMilitaryCalculator (container, options)
     {
         container.innerHTML = html;
     }
+
+    initWidgetLogic();
 
     if (options.hideCopyright === "1")
     {
@@ -391,26 +380,7 @@ function initMilitaryCalculator (container, options)
     container.querySelector('.performCalc').style.color = options.buttonTextColor;
     container.querySelector('.calc-form').style.backgroundColor = options.background;
 
-
     $('select').niceSelect();
-
-    $('.help-link').each(function () {
-        $(this).click(function (e) {
-            var hintId = $(this).attr('data-help-id');
-            var rect = e.target.getBoundingClientRect();
-
-            $.balloon('show', {
-                x: rect.left + window.scrollX + 75,
-                y: rect.top + window.scrollY - 10,
-                width: Math.min(400, window.innerWidth - 30), // ширина, но унитываем мобильную версию
-                innerContent: calcHintText[hintId],
-                triangleVerticalSide: false, // Язычок по умолчанию к горизонтальной грани,
-                hideTriangle: false, // Скрывать язычок
-                clickEvent: false, // По умолчанию показываем по наведению
-                closeButton: true // Для открывания по клику по умолчанию показываем кнопку закрытия
-            });
-        });
-    });
 
     let form = document.querySelector('form');
     form.addEventListener("submit", function (event) {
@@ -418,7 +388,7 @@ function initMilitaryCalculator (container, options)
     });
 }
 
-let scriptTag = document.getElementById('militaryCalc-widget');
+let scriptTag = document.getElementById('militaryCalc');
 let fast = scriptTag.getAttribute('fast');
 
 if (window.calcWidgetInitiated === undefined)
