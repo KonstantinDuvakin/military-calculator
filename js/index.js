@@ -100,7 +100,7 @@ function initMilitaryCalculator (container, options)
                     </div>
                     <div class="col-md-12 mb-3 ml-1" id="spis1_group_hand" style="display: none">
                         <label for="spis1_hand">Оклад по воинской должности (ввод вручную)</label><br>
-                        <input class="w-100 mt-3" id="spis1_hand" name="spis1_hand" placeholder="Укажите размер оклада" type="text" value="">
+                        <input class="w-100 mt-3" id="spis1_hand" name="spis1_hand" placeholder="Укажите размер оклада" type="number" value="">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis2"><span>Оклад по воинскому званию</span></label>
@@ -137,7 +137,7 @@ function initMilitaryCalculator (container, options)
                     </div>
                     <div class="col-md-12 mb-3 ml-1" id="spis2_group_hand" style="display: none">
                         <label for="spis2_hand">Оклад по воинскому званию (ввод вручную)</label>
-                        <input class="w-100 mt-3" id="spis2_hand" name="spis2_hand" placeholder="Укажите размер оклада" type="text" value="">
+                        <input class="w-100 mt-3" id="spis2_hand" name="spis2_hand" placeholder="Укажите размер оклада" type="number" value="">
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis3"><span>Надбавка за квалификационную категорию летному составу</span></label>
@@ -324,7 +324,7 @@ function initMilitaryCalculator (container, options)
                 </div>
             </div>
         </div>
-        <div class="calc-footer justify-content-end d-flex flex-wrap pr-2">
+        <div class="calc-footer justify-content-end d-flex flex-wrap">
             <div class="py-3 align-self-center mr-4">
                 <a class="footer-button d-flex" href="/">
                     <img class="mr-2 align-self-center" src="https://military.pfrf-kabinet.ru/img/warning.svg" alt="Внимание!">
@@ -349,7 +349,7 @@ function initMilitaryCalculator (container, options)
                         <img class="icon-fb" src="https://military.pfrf-kabinet.ru/img/facebook.svg" alt="Facebook">
                     </div>
                 </a>
-                <a class="footer-button d-flex mr-1" href="http://twitter.com/share?url=${location.href}">
+                <a class="footer-button d-flex" href="http://twitter.com/share?url=${location.href}">
                     <div class="twitter">
                         <img class="icon-twitter" src="https://military.pfrf-kabinet.ru/img/twitter.svg" alt="Twitter">
                     </div>
