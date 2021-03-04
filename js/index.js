@@ -39,7 +39,7 @@ function initMilitaryCalculator (container, options)
                         <label for="spis1"><span>Оклад по воинской должности</span></label>
                     </div>
                     <div class="col-md-12 mb-3 ml-1">
-                        <a href="http://voensud-mo.ru/content/DD/01.10.2019" target="_blank">(тарифный разряд по штатной воинской должности)</a>
+                        <a href="https://pfrf-kabinet.ru/faq/razmery-okladov-po-voinskim-dolzhnostyam.html" target="_blank">(тарифный разряд по штатной воинской должности)</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
@@ -106,7 +106,7 @@ function initMilitaryCalculator (container, options)
                         <label for="spis2"><span>Оклад по воинскому званию</span></label>
                     </div>
                     <div class="col-md-12 mb-3 ml-1">
-                        <a href="http://voensud-mo.ru/content/oklady/01.10.2019/OVZ" target="_blank">(Приложение №2)</a>
+                        <a href="https://pfrf-kabinet.ru/faq/razmery-okladov-po-voinskim-zvaniyam.html" target="_blank">(размеры окладов по воинским званиям)</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
@@ -268,7 +268,7 @@ function initMilitaryCalculator (container, options)
                         <label for="spis7"><span>Укажите дату, на которую необходимо рассчитать военную пенсию</span></label>
                     </div>
                     <div class="col-md-12 mb-3 ml-1">
-                        <a href="http://voensud-mo.ru/pension#Р" target="_blank">(см. понижающий коэффициент)</a>
+                        <a href="https://pfrf-kabinet.ru/faq/ponizhayuschiy-koeffitsient-voennoy-pensii.html" target="_blank">(см. понижающий коэффициент военной пенсии)</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
@@ -326,13 +326,13 @@ function initMilitaryCalculator (container, options)
         </div>
         <div class="calc-footer justify-content-end d-flex flex-wrap">
             <div class="py-3 align-self-center mr-4">
-                <a class="footer-button d-flex" href="/">
+                <a class="footer-button d-flex" href="https://pfrf-kabinet.ru/feedback">
                     <img class="mr-2 align-self-center" src="https://military.pfrf-kabinet.ru/img/warning.svg" alt="Внимание!">
                     <span class="calc-footer-text">Сообщить об ошибке</span>
                 </a>
             </div>
             <div class="py-3 align-self-center mr-4">
-                <a class="footer-button d-flex" href="/">
+                <a class="footer-button d-flex" href="https://pfrf-kabinet.ru/kalkulyator-voennoy-pensii/vidzhet">
                     <img class="mr-2 align-self-center" src="https://military.pfrf-kabinet.ru/img/bracket.svg" alt="Скобки">
                     <span class="calc-footer-text">Виджет для сайта</span>
                 </a>
