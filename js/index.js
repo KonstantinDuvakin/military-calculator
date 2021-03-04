@@ -39,7 +39,7 @@ function initMilitaryCalculator (container, options)
                         <label for="spis1"><span>Оклад по воинской должности</span></label>
                     </div>
                     <div class="col-md-12 mb-3 ml-1">
-                        <a href="https://pfrf-kabinet.ru/faq/razmery-okladov-po-voinskim-dolzhnostyam.html" target="_blank">(тарифный разряд по штатной воинской должности)</a>
+                        <a href="https://pfrf-kabinet.ru/faq/razmery-okladov-po-voinskim-dolzhnostyam.html" rel="nofollow" target="_blank">(тарифный разряд по штатной воинской должности)</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
@@ -106,7 +106,7 @@ function initMilitaryCalculator (container, options)
                         <label for="spis2"><span>Оклад по воинскому званию</span></label>
                     </div>
                     <div class="col-md-12 mb-3 ml-1">
-                        <a href="https://pfrf-kabinet.ru/faq/razmery-okladov-po-voinskim-zvaniyam.html" target="_blank">(размеры окладов по воинским званиям)</a>
+                        <a href="https://pfrf-kabinet.ru/faq/razmery-okladov-po-voinskim-zvaniyam.html" rel="nofollow" target="_blank">(размеры окладов по воинским званиям)</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
@@ -157,9 +157,6 @@ function initMilitaryCalculator (container, options)
                     </div>
                     <div class="col-md-12 ml-1">
                         <label for="spis4"><span>Надбавка за выслугу лет</span></label>
-                    </div>
-                    <div class="col-md-12 mb-3 ml-1">
-                        <a href="http://voensud-mo.ru/doc/mil/order%20/2011/2700#40" target="_blank">(п.40)**</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
@@ -268,7 +265,7 @@ function initMilitaryCalculator (container, options)
                         <label for="spis7"><span>Укажите дату, на которую необходимо рассчитать военную пенсию</span></label>
                     </div>
                     <div class="col-md-12 mb-3 ml-1">
-                        <a href="https://pfrf-kabinet.ru/faq/ponizhayuschiy-koeffitsient-voennoy-pensii.html" target="_blank">(см. понижающий коэффициент военной пенсии)</a>
+                        <a href="https://pfrf-kabinet.ru/faq/ponizhayuschiy-koeffitsient-voennoy-pensii.html" rel="nofollow" target="_blank">(см. понижающий коэффициент военной пенсии)</a>
                     </div>
                     <div class="col-md-12 mb-3 d-flex position-relative">
                         <img src="https://military.pfrf-kabinet.ru/img/choise_triangle.svg" class="arrow">
@@ -304,7 +301,7 @@ function initMilitaryCalculator (container, options)
                     <div class="col-sm-7 mb-2 align-self-center">
                         <div class="copyright">
                         <span class="text-secondary bottom-link">Калькулятор пенсии представлен
-                        <br>сайтом <a href="https://pfrf-kabinet.ru" target="_blank">pfrf-kabinet.ru</a></span>
+                        <br>сайтом <a href="https://pfrf-kabinet.ru" rel="nofollow" target="_blank">pfrf-kabinet.ru</a></span>
                         </div>
                     </div>
                     <div class="col-sm-5 mb-2">
@@ -326,13 +323,13 @@ function initMilitaryCalculator (container, options)
         </div>
         <div class="calc-footer justify-content-end d-flex flex-wrap">
             <div class="py-3 align-self-center mr-4">
-                <a class="footer-button d-flex" href="https://pfrf-kabinet.ru/feedback">
+                <a class="footer-button d-flex" href="https://pfrf-kabinet.ru/feedback" rel="nofollow" target="_blank">
                     <img class="mr-2 align-self-center" src="https://military.pfrf-kabinet.ru/img/warning.svg" alt="Внимание!">
                     <span class="calc-footer-text">Сообщить об ошибке</span>
                 </a>
             </div>
             <div class="py-3 align-self-center mr-4">
-                <a class="footer-button d-flex" href="https://pfrf-kabinet.ru/kalkulyator-voennoy-pensii/vidzhet">
+                <a class="footer-button d-flex" href="https://pfrf-kabinet.ru/kalkulyator-voennoy-pensii/vidzhet" rel="nofollow" target="_blank">
                     <img class="mr-2 align-self-center" src="https://military.pfrf-kabinet.ru/img/bracket.svg" alt="Скобки">
                     <span class="calc-footer-text">Виджет для сайта</span>
                 </a>
